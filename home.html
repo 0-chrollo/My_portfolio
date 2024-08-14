@@ -8,113 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="scripts.js"></script>
 </head>
-<style>
-   
 
-
-
-
-    .navbar ul li a:hover {
-    
-    text-decoration: none;
-    }
-
-    .navbar ul li a:hover::after {
-content: "";
-position: absolute;
-left:0;
-bottom:0;
-width:100%;
-height:2px;
-background-color:  rgb(45, 135, 129);
-        
-}
-
-
-    .navbar ul li a {
-        position: relative;
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 8px 12px;
-        display: block;
-    }
-
-    .burger {
-        display: none;
-        cursor: pointer;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .burger div {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        transition: all 0.3s ease;
-    }
-
-    .menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 50%;
-        height: 100%;
-        background-color: #131313;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.5s ease;
-        z-index: 999;
-    }
-
-    .menu ul {
-       
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .dark-mode .menu {
-    background-color:  rgba(18, 18, 18, 0.973);
-}
-
-.light-mode .menu {
-    background-color: #e2e2e2;
-    color: rgb(33, 37, 41);
-}
-    .menu ul li {
-        margin: 15px 0;
-    }
-
-    @media screen and (max-width: 768px) {
-        .burger {
-            display: flex;
-        }
-
-        .navbar ul {
-            display: none;
-        }
-
-        .menu.open {
-            right: 0;
-            
-        }
-
-        .burger.open div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .burger.open div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .burger.open div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-    }
-</style>
 </head>
 
 <nav class="navbar">
@@ -132,12 +26,28 @@ background-color:  rgb(45, 135, 129);
         <div></div>
     </div>
 </nav>
-<div class="menu" id="menu">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+
+<style>
+    .mobiles a{
+        
+        text-decoration: none;
+        padding: 10px;
+    }
+    .mobiles img{
+   
+      width:45%;
+      margin-bottom: 20%;
+      border-radius: 45%;
+    }
+</style>
+<div class="menu" id="menu" >
+    <ul class="mobiles">
+        <img src="mypicture.jpg" alt="code">
+        <a href="#"><i class="fas fa-file-alt" style="color:  rgb(123, 203, 198);"></i> Resume</a></li>
+        <a href="#"><i class="fas fa-user-circle" style="color: rgb(123, 203, 198);"></i> About me</a></li>
+        <a href="#"><i class="fas fa-briefcase" style="color:rgb(123, 203, 198);"></i> Projects</a></li>
+        <a href="#"><i class="fas fa-code" style="color:rgb(123, 203, 198);"></i> Repositories</a></li>
+        <a href="#"><i class="fas fa-envelope" style="color:rgb(123, 203, 198);"></i> Contact me</a></li>
     </ul>
 </div>
 
