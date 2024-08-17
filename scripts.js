@@ -19,3 +19,4 @@ function toggleMenu() {
     menu.classList.toggle('open');
     burger.classList.toggle('open');
 }
+
