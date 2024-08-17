@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
 function toggleMenu() {
     const menu = document.getElementById('menu');
     const burger = document.querySelector('.burger');
