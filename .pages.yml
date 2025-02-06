@@ -28,9 +28,11 @@ content:
           - { name: url, label: URL, type: image }
       - { name: body, label: Body, type: rich-text }
 
-  - name: blog
-    label: Blog Page
+  - name: config
+    label: Jekyll Config
     type: file
-    path: "blog.html"
-    icon: book
-    format: raw
+    path: "_config.yml"
+    fields:
+      - { name: title, label: Website Title, type: string }
+      - { name: description, label: Website Description, type: string }
+      - { name: url, label: Website URL, type: string }
