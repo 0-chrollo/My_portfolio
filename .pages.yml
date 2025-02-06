@@ -1,20 +1,32 @@
 media:
-  # Points to the media files in your repository's root.
+  # The folder in your repo where media files live.
+  # Since your media (images, GIFs, etc.) are in the root, we use "."
   input: "."
 
-  # References media files relative to the website's base URL.
-  output: "."
+  # The folder on your live site where media is served.
+  # In this case, media is served from the site’s root, so we use "/"
+  output: "/"
 
-  # The default path when opening the media browser.
+  # When the media browser opens in PagesCMS, it will default to the root.
   path: "/"
 
-  # File extensions to display in the PagesCMS media browser.
+  # Only files with these extensions will appear in the media browser.
   extensions:
-    - png
+    - gif
     - jpg
     - jpeg
-    - gif
+    - png
 
-  # Categories for organizing your media files.
-  categories:
-    - images
+# This content section tells PagesCMS which file to treat as a managed page.
+# In this example, we configure the homepage (index.html).
+content:
+  - name: homepage
+    label: "Home"
+    type: file
+    # Path to the file relative to the repo root
+    path: "index.html"
+    # A Lucide icon name to show in the CMS sidebar (optional)
+    icon: home
+    # Set the format to "raw" if you are editing a plain HTML file.
+    # (Other options include code, yaml-frontmatter, etc.)
+    format: raw
