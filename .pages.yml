@@ -1,5 +1,5 @@
 media:
-  input: "/"
+  input: "0-chrollo/My_portfolio"
   output: "/"
   categories: ["image"]
 
