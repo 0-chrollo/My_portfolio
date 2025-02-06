@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio Blog</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- You can add additional meta tags or links to your assets here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Blog</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <a href="index.html">Home</a> | <span>Blog</span>
+        </nav>
+    </header>
 
-  <main>
-    <!-- Loop through the posts collection (as defined by the "name: posts" entry in .pages.yml) -->
-    {% for post in posts %}
-      <article class="post">
-        <!-- Display the cover image if provided -->
-        {% if post.coverImage %}
-          <img src="/assets/{{ post.coverImage }}" alt="{{ post.title }} cover image">
-        {% endif %}
+    <main>
+        <h1>Blog</h1>
+        {% for post in site.posts %}
+        <article>
+            {% if post.coverImage %}
+                <img src="{{ post.coverImage }}" alt="{{ post.title }}">
+            {% endif %}
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            {% if post.date %}
+                <p><time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
+            {% endif %}
+            {% if post.excerpt %}
+                <p>{{ post.excerpt }}</p>
+            {% endif %}
+            <a href="{{ post.url }}">Read More</a>
+        </article>
+        {% else %}
+        <p>No posts found.</p>
+        {% endfor %}
+    </main>
 
-        <!-- Post title -->
-        <h2>{{ post.title }}</h2>
-
-        <!-- Post date -->
-        {% if post.date %}
-          <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-        {% endif %}
-
-        <!-- Post excerpt -->
-        {% if post.excerpt %}
-          <p class="post-excerpt">{{ post.excerpt }}</p>
-        {% endif %}
-
-        <!-- Link to the full post page.  
-             (Assumes that your static site generator creates a URL for each post.
-              You may need to adjust this based on your URL structure.) -->
-        <a href="{{ post.url }}">Read More</a>
-      </article>
-    {% else %}
-      <p>No posts found.</p>
-    {% endfor %}
-  </main>
-
-  <footer>
-    <p>&copy; {{ 'now' | date: "%Y" }} My Portfolio</p>
-  </footer>
+    <footer>
+        <p>© {{ 'now' | date: "%Y" }} My Portfolio</p>
+    </footer>
 </body>
 </html>
