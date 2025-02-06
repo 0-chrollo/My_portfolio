@@ -1,0 +1,20 @@
+media:
+  # Relative path in your repo where media files are stored.
+  input: "."
+
+  # Relative path in your generated site where media files will be referenced.
+  output: "."
+
+  # The default path when opening the media browser.
+  path: "/"
+
+  # File extensions to show in the media browser.
+  extensions:
+    - png
+    - jpg
+    - jpeg
+    - gif
+
+  # Categories used to organize media files.
+  categories:
+    - images
