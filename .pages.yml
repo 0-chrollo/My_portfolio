@@ -1,18 +1,15 @@
 media:
-  # Since your media files (e.g. background.png, profile.jpg) are in the repo’s root,
-  # we use "." as the input, and serve them from the site’s root.
   input: "."
   output: "/"
-  categories: [ "image" ]
+  categories: ["image"]
 
 content:
   - name: posts
     label: Posts
     type: collection
-    # Points to the _posts folder in your repository
     path: "_posts"
     view:
-      fields: [ coverImage, title, date ]
+      fields: [coverImage, title, date]
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: excerpt, label: Excerpt, type: string }
@@ -34,16 +31,6 @@ content:
   - name: blog
     label: Blog Page
     type: file
-    # Reference to your blog.html file in the root
     path: "blog.html"
     icon: book
-    format: raw
-        type: object
-        fields:
-          - { name: url, label: URL, type: image }
-      - { name: body, label: Body, type: rich-text }    path: "blog.html"
-    # A Lucide icon name to show in the CMS sidebar (optional)
-    icon: home
-    # Set the format to "raw" if you are editing a plain HTML file.
-    # (Other options include code, yaml-frontmatter, etc.)
     format: raw
