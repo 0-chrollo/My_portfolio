@@ -1,41 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a> | <span>Blog</span>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Blog</h1>
-        {% for post in site.posts %}
-        <article>
-            {% if post.coverImage %}
-                <img src="{{ post.coverImage }}" alt="{{ post.title }}">
-            {% endif %}
-            <h2><a href="{{ post.url }}">{{ title }}</a></h2>
-            {% if post.date %}
-                <p><time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time></p>
-            {% endif %}
-            {% if post.excerpt %}
-                <p>{{ post.excerpt }}</p>
-            {% endif %}
-            <a href="{{ post.url }}">Read More</a>
-        </article>
-        {% else %}
-        <p>No posts found.</p>
-        {% endfor %}
-    </main>
-
-    <footer>
-        <p>© {{ 'now' | date: "%Y" }} My Portfolio</p>
-    </footer>
-</body>
-</html>
+---
+layout: default
+title: Blog
+---
+<h1>Latest Posts</h1>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
