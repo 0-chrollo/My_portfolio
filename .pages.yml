@@ -25,7 +25,7 @@ content:
         type: object
         fields:
           - { name: url, label: URL, type: image }
-      - { name: body, label: Body, type: rich-text }    path: "index.html"
+      - { name: body, label: Body, type: rich-text }    path: "blog.html"
     # A Lucide icon name to show in the CMS sidebar (optional)
     icon: home
     # Set the format to "raw" if you are editing a plain HTML file.
